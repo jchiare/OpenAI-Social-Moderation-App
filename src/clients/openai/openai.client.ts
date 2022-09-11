@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { ModerateTextApiResponse } from './openai.dto';
+import type { ModerateTextApiResponse, Results } from './openai.dto';
 
 class OpenAIClient {
   private bearerToken: string;
@@ -10,10 +10,10 @@ class OpenAIClient {
     this.bearerToken = bearerToken;
   }
 
-  public async moderateText(text: string | string[]) {
+  public async moderateText(text: string | string[]): Promise<Results> {
     const headers = {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.OPENAI_BEARER_TOKEN}`,
+      Authorization: `Bearer ${this.bearerToken}`,
     };
     const moderationData = await axios.post<ModerateTextApiResponse>(
       'https://api.openai.com/v1/moderations',

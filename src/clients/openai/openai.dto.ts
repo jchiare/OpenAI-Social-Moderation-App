@@ -3,7 +3,7 @@ export type ModerateTextApiResponse = {
   model: string;
   results: Results;
 };
-type Results = {
+export type Results = {
   categories: Categories;
   category_scores: CategoryScores;
   flagged: boolean;

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>OpenAI Social Moderation App</title>
+    <meta name="description" content="OpenAI Social Moderation App." />
+    <meta name="author" content="Jay Chiarella" />
+
+    <meta property="og:title" content="OpenAI Social Moderation App" />
+    <meta property="og:type" content="website" />
+
+    <meta property="og:description" content="OpenAI Social Moderation App" />
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0" />
+  </head>
+  <body>
+    <div class="grid-section">
+      <div class="twitter-section">
+        <div class="username-search">
+          <label for="twitter-handle"
+            >Input the Twitter handle (without the @)</label
+          >
+          <br />
+          <input
+            type="text"
+            id="twitter-handle"
+            name="twitter-handle"
+            required
+            autofocus
+          />
+        </div>
+        <div class="twitter-root-tweet">roottweet</div>
+        <div class="twitter-replies">replies</div>
+      </div>
+      <div class="moderation-threshold-slider">
+        <h3>Enter your threshold for receiving messages</h3>
+        <p>Higher % means more message will be blocked</p>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="50"
+          class="slider"
+          id="moderation-slider"
+          oninput="this.nextElementSibling.nextElementSibling.children[0].value = this.value"
+        />
+        <br />
+        <span style="font-weight: bold"
+          ><output style="padding-left: 45px">50</output>% </span
+        >threshold
+      </div>
+    </div>
+  </body>
+</html>

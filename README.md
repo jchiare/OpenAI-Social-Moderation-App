@@ -43,5 +43,9 @@ OpenAI's moderation endpoint to:
 ## Technical Implementation
 
 - NodeJS / TypeScript on the backend
+- Basic HTML5/CSS/JS on the frontend
 
 ## Future Improvements
+
+- [] Use a modern JS framework for the frontend
+- [] Use a modern UI library for the frontend

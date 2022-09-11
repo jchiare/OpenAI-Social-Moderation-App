@@ -41,3 +41,7 @@ OpenAI's moderation endpoint to:
 - Hide the reply if it's content moderation classification is below the tolerance level provided by the user
 
 ## Technical Implementation
+
+- NodeJS / TypeScript on the backend
+
+## Future Improvements

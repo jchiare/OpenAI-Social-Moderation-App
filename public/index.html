@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="css/styles.css?v=1.0" />
   </head>
   <body>
+    <h2 style="text-align: center">
+      Hide Potential Harmful Social Media Replies
+    </h2>
     <div class="grid-section">
       <div class="twitter-section">
         <div class="username-search">
@@ -31,13 +34,18 @@
             required
             autofocus
           />
+          <button style="cursor: pointer" id="search-btn">Search</button>
         </div>
-        <div class="twitter-root-tweet">roottweet</div>
-        <div class="twitter-replies">replies</div>
+        <div class="twitter-root-tweet" id="twitter-root-tweet">
+          <h4>Latest Tweet</h4>
+          <div id="twitter-embed-section"></div>
+        </div>
+        <div class="twitter-replies" id="twitter-replies-section"></div>
       </div>
       <div class="moderation-threshold-slider">
         <h3>Enter your threshold for receiving messages</h3>
-        <p>Higher % means more message will be blocked</p>
+        <p style="font-style: italic">Adjust the threshold before the search</p>
+        <p>Lower % threshold means low tolerance for "bad" messages</p>
         <input
           type="range"
           min="1"
@@ -53,5 +61,7 @@
         >threshold
       </div>
     </div>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

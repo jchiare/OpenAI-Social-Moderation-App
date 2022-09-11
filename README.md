@@ -50,4 +50,15 @@ OpenAI's moderation endpoint to:
 - [ ] Use a modern JS framework for the frontend
 - [ ] Use a modern UI library for the frontend
 - [ ] HTTP error handling for external services
-- [ ] Decouple the logic of username searching / root tweet finding from the one endpoint (into multiple endpoints)
+- [ ] Decouple the controller logic of username searching / root tweet finding from the one endpoint (into multiple endpoints)
+- [ ] Add pagination to Twitter's API calls
+- [ ] Add more unit and integration tests on the backend
+- [ ] Threshold slider works after the backend API call, not only at the time of the request
+- [ ] Containerize the app (with Docker)
+- [ ] Add CI/CD
+
+### How to run
+
+1. Clone the repo
+2. Run `npm install` to install the depencencies
+3. Run `npm run start` to start the application

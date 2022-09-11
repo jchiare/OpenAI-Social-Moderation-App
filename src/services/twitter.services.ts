@@ -16,11 +16,14 @@ function _filterRootTweets(tweet: TweetV2): boolean {
 }
 
 export async function getLatestRootTweetByUserId(
-  userId: string
+  userId: string,
+  maxResults = 50
 ): Promise<TweetV2 | null> {
   const tweets = await twitterClient.v2.search(`from:${userId}`, {
     'tweet.fields': 'in_reply_to_user_id',
+    max_results: maxResults,
   });
+
   const rootTweets = tweets.data.data?.filter(_filterRootTweets);
   return rootTweets?.[0];
 }

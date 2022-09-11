@@ -47,5 +47,7 @@ OpenAI's moderation endpoint to:
 
 ## Future Improvements
 
-- [] Use a modern JS framework for the frontend
-- [] Use a modern UI library for the frontend
+- [ ] Use a modern JS framework for the frontend
+- [ ] Use a modern UI library for the frontend
+- [ ] HTTP error handling for external services
+- [ ] Decouple the logic of username searching / root tweet finding from the one endpoint (into multiple endpoints)

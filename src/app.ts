@@ -7,9 +7,20 @@ const app = express();
 
 // sets some sensible HTTP headers since
 // it's directly connected to internet
-app.use(helmet());
+app.use(
+  helmet({
+    crossOriginEmbedderPolicy: false,
+    contentSecurityPolicy: {
+      directives: {
+        scriptSrc: ["'self'", 'https://platform.twitter.com'],
+        frameSrc: ["'self'", 'https://platform.twitter.com'],
+      },
+    },
+  })
+);
 
 app.use(express.json());
+app.use(express.static('public'));
 
 async function start(port = HTTP_PORT) {
   route(app);

@@ -56,6 +56,9 @@ OpenAI's moderation endpoint to:
 - [ ] Threshold slider works after the backend API call, not only at the time of the request
 - [ ] Containerize the app (with Docker)
 - [ ] Add CI/CD
+- [ ] Cache the API responses
+- [ ] Allow users to search by a specific tweet and not only the latest
+      ... much more
 
 ### How to run
 

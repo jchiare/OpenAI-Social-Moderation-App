@@ -1,3 +1,6 @@
+// would have been easier to use NextJS or a frontend framework at this point
+// I got carried away ..
+
 const searchButton = document.getElementById('search-btn');
 const twitterHandle = document.getElementById('twitter-handle');
 const thresholdValue = document.getElementById('moderation-slider');
@@ -54,7 +57,7 @@ searchButton.onclick = () => {
   while (tweetEmbedSection.lastElementChild) {
     tweetEmbedSection.removeChild(tweetEmbedSection.lastElementChild);
   }
-  let responseData;
+
   fetch('http://localhost:3000/twitter/get-moderated-replies', {
     method: 'POST',
     body: JSON.stringify({

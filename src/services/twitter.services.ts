@@ -10,7 +10,7 @@ export async function getUserByUsername(
 }
 
 // since there is no property in the V2 API
-// to determine is a tweet is root / parent or not
+// to determine if a tweet is root / parent or not
 function _filterRootTweets(tweet: TweetV2): boolean {
   return !tweet.in_reply_to_user_id && !tweet.text.startsWith('RT @');
 }
@@ -28,7 +28,7 @@ export async function getLatestRootTweetByUserId(
 export async function getRepliesFromRootTweet(
   rootTweetId: string,
   maxResults = 50
-) {
+): Promise<TweetV2[]> {
   const replies = await twitterClient.v2.search(
     `in_reply_to_tweet_id:${rootTweetId}`,
     {

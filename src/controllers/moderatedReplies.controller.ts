@@ -2,7 +2,8 @@ import {
   getUserByUsername,
   getLatestRootTweetByUserId,
   getRepliesFromRootTweet,
-} from '../../services/twitter.services';
+} from '../services/twitter.services';
+import { getModResultsFromTwitterReplies } from '../services/openai.service';
 
 import type { Request, Response } from 'express';
 
@@ -27,6 +28,13 @@ export async function moderatedReplies(req: Request, res: Response) {
   }
 
   const replies = await getRepliesFromRootTweet(latestRootTweet.id);
+  if (!replies) {
+    return res.status(200).send({
+      data: null,
+    });
+  }
 
-  res.status(200).send(replies);
+  const moderationResults = await getModResultsFromTwitterReplies(replies);
+
+  res.status(200).send(moderationResults);
 }

@@ -4,7 +4,7 @@ import type { Results } from 'src/clients/openai/openai.dto';
 
 // exporting a private function
 // only for testing purposes
-export function _parseRepliesAboveModerationThreshold(
+export function _getRepliesBelowModerationThreshold(
   textList: string[],
   moderationResults: Results,
   moderationThreshold: number
@@ -46,7 +46,7 @@ export async function getTwitterRepliesBelowModerationThreshold(
     textList
   );
 
-  const repliesBelowModerationThreshold = _parseRepliesAboveModerationThreshold(
+  const repliesBelowModerationThreshold = _getRepliesBelowModerationThreshold(
     textList,
     moderationResults,
     moderationThreshold

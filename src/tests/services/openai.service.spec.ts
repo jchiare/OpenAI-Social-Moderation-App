@@ -1,11 +1,11 @@
 import { expect } from 'chai';
-import { _parseRepliesAboveModerationThreshold } from '../../services/openai.service';
+import { _getRepliesBelowModerationThreshold } from '../../services/openai.service';
 import { mockModerationResults, mockTextList } from './openai.service.fixtures';
 
 describe('OpenAI Service', () => {
-  describe('_parseRepliesAboveModerationThreshold unit tests', () => {
-    it('should return only replies above moderation threshold', async () => {
-      const replies = _parseRepliesAboveModerationThreshold(
+  describe('_getRepliesBelowModerationThreshold unit tests', () => {
+    it('should return only replies below moderation threshold', async () => {
+      const replies = _getRepliesBelowModerationThreshold(
         mockTextList,
         mockModerationResults,
         50

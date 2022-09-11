@@ -58,16 +58,19 @@ searchButton.onclick = () => {
     tweetEmbedSection.removeChild(tweetEmbedSection.lastElementChild);
   }
 
-  fetch('http://localhost:3000/twitter/get-moderated-replies', {
-    method: 'POST',
-    body: JSON.stringify({
-      twitterHandle: twitterHandle.value,
-      moderationThreshold: thresholdValue.value,
-    }),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
+  fetch(
+    'https://starfish-app-ls8qg.ondigitalocean.app/twitter/get-moderated-replies',
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        twitterHandle: twitterHandle.value,
+        moderationThreshold: thresholdValue.value,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  )
     .then((res) => res.json())
     .then((data) => {
       if (data.error) {

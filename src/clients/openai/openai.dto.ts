@@ -7,7 +7,7 @@ export type Results = {
   categories: Categories;
   category_scores: CategoryScores;
   flagged: boolean;
-};
+}[];
 type Categories = {
   hate: boolean;
   'hate/threatening': boolean;
@@ -18,6 +18,7 @@ type Categories = {
   'violence/graphic': boolean;
 };
 type CategoryScores = {
+  [x: string]: number;
   hate: number;
   'hate/threatening': number;
   'self-harm': number;

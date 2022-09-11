@@ -12,7 +12,7 @@ class OpenAIClient {
 
   public async getModeratedTextResults(
     text: string | string[]
-  ): Promise<Results | void> {
+  ): Promise<Results> {
     const headers = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${this.bearerToken}`,

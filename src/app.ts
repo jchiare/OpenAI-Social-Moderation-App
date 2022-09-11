@@ -1,6 +1,7 @@
 import express from 'express';
 import helmet from 'helmet';
 import { route } from './router';
+import morgan from 'morgan';
 
 const HTTP_PORT = process.env.PORT || 3000;
 const app = express();
@@ -18,6 +19,8 @@ app.use(
     },
   })
 );
+
+app.use(morgan('tiny'));
 
 app.use(express.json());
 app.use(express.static('public'));

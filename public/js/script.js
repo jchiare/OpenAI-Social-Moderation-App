@@ -7,6 +7,7 @@ const thresholdValue = document.getElementById('moderation-slider');
 const rootTweet = document.getElementById('twitter-root-tweet');
 const repliesDiv = document.getElementById('twitter-replies-section');
 const tweetEmbedSection = document.getElementById('twitter-embed-section');
+const thresholdOutput = document.getElementById('threshold-output');
 
 function createTwitterEmbed(tweetId) {
   const blockquote = createEl(undefined, 'blockquote', 'twitter-tweet');
@@ -86,4 +87,8 @@ searchButton.onclick = () => {
       window.alert('Error: ', JSON.stringify(err));
       searchButton.textContent = 'Error!!';
     });
+};
+
+thresholdValue.oninput = (e) => {
+  thresholdOutput.value = e.target.value;
 };

@@ -2,6 +2,8 @@
 
 Shield Social Media users from harmful messages
 
+You can try it out here: https://starfish-app-ls8qg.ondigitalocean.app/
+
 ## Purpose
 
 Social media has lots of positives and negatives. Some of the most prominent negative aspects are the harmful messages that are not constructive to the conversation or initial post.
@@ -22,23 +24,23 @@ We use OpenAI's [New-and-Improved Content Moderation Tooling](https://openai.com
 
 ## High Level Implementation
 
-##### On the webpage, we ask the user for:
+#### On the webpage, we ask the user for:
 
 1. A Twitter username
 2. Their tolerance for viewing potentially harmful replies to a tweet
 
-##### On the backend, we use:
+#### On the backend, we use:
 
-Twitter's V2 API to:
+.. Twitter's V2 API to:
 
 - Get a user by their username
 - Return their most recent tweet (not reply or re-tweet)
 - Get up to 50 replies to the tweet
 
-OpenAI's moderation endpoint to:
+.. OpenAI's moderation endpoint to:
 
-- Classify the text of the replies against the Moderation Details
-- Hide the reply if it's content moderation classification is below the tolerance level provided by the user
+- Classify the content of the tweet's replies against the moderation endpoint
+- Hide the reply if it's content moderation classification is above the tolerance level provided by the user
 
 ## Technical Implementation
 

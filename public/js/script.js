@@ -38,7 +38,7 @@ function createEl(text, elType, className) {
 
 function populateReplies(replies) {
   const repliesHeader = createEl(
-    'Replies below moderation threshold',
+    'Replies below moderation tolerance',
     'h4',
     'reply-header'
   );

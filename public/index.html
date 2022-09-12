@@ -43,9 +43,12 @@
         <div class="twitter-replies" id="twitter-replies-section"></div>
       </div>
       <div class="moderation-threshold-slider">
-        <h3>Enter your threshold for receiving messages</h3>
-        <p style="font-style: italic">Adjust the threshold before the search</p>
-        <p>Lower % threshold means low tolerance for "bad" messages</p>
+        <h3>Your tolerance for "bad" messages</h3>
+        <p style="font-weight: 700">Tips:</p>
+        <ul>
+          <li>Adjust the tolerance before the search</li>
+          <li>Set the tolerance low (5% or 1% etc) to hide more replies</li>
+        </ul>
         <input
           type="range"
           min="1"
@@ -58,7 +61,7 @@
         <span style="font-weight: bold"
           ><output id="threshold-output" style="padding-left: 45px">50</output
           >% </span
-        >threshold
+        >tolerance
       </div>
     </div>
 

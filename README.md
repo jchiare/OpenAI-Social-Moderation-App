@@ -46,7 +46,7 @@ We use OpenAI's [New-and-Improved Content Moderation Tooling](https://openai.com
 
 ## Technical Implementation
 
-- NodeJS / TypeScript on the backend
+- NodeJS / TypeScript on the backend (tested on node 14+)
 - Basic HTML5/CSS/JS on the frontend
 
 ## Future Improvements

@@ -10,6 +10,8 @@ Social media has lots of positives and negatives. Some of the most prominent neg
 
 We want to enable users to not view the messages that are considered harmful on their Social Media, starting with the replies to their most recent tweet.
 
+Demo use: https://user-images.githubusercontent.com/17396900/189602892-6c390fa9-c7f2-4201-b19e-2565fcee51c7.mp4
+
 ## Moderation Details
 
 We use OpenAI's [New-and-Improved Content Moderation Tooling](https://openai.com/blog/new-and-improved-content-moderation-tooling/) to predict how harmful messages are based on the following categories:
@@ -44,7 +46,7 @@ We use OpenAI's [New-and-Improved Content Moderation Tooling](https://openai.com
 
 ## Technical Implementation
 
-- NodeJS / TypeScript on the backend
+- NodeJS / TypeScript on the backend (tested on node 14+)
 - Basic HTML5/CSS/JS on the frontend
 
 ## Future Improvements
@@ -67,3 +69,7 @@ We use OpenAI's [New-and-Improved Content Moderation Tooling](https://openai.com
 1. Clone the repo
 2. Run `npm install` to install the depencencies
 3. Run `npm run start` to start the application
+
+
+
+

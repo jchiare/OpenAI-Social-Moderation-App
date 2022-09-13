@@ -16,6 +16,8 @@ export async function moderatedReplies(req: Request, res: Response) {
 
   const twitterUsername = await getUserByUsername(twitterHandle);
   if (!twitterUsername) {
+    const errMsg = `No Twitter username found with "${twitterHandle}"`;
+    console.log(errMsg); // add server side error message for stats
     return res
       .status(400)
       .send({ error: `No Twitter username found with "${twitterHandle}"` });
@@ -23,8 +25,10 @@ export async function moderatedReplies(req: Request, res: Response) {
 
   const latestRootTweet = await getLatestRootTweetByUserId(twitterUsername.id);
   if (!latestRootTweet) {
+    const errMsg = `Twitter user "${twitterHandle}" has no public root / parent tweets in their latest 50 tweets`;
+    console.log(errMsg); // add server side error message for stats
     return res.status(400).send({
-      error: `Twitter user "${twitterHandle}" has no public root / parent tweets in their latest 50 tweets`,
+      error: errMsg,
     });
   }
 
